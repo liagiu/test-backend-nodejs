@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import Product from "../models/Product";
+import Product from "../models/Product.js";
 
 class ProductController {
   async index(res, req) {
@@ -61,4 +61,4 @@ class ProductController {
   }
 }
 
-module.exports = new ProductController();
+export default new ProductController();

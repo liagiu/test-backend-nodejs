@@ -8,4 +8,4 @@ var ProductSchema = new Schema({
   category: String,
 });
 
-module.exports = mongoose.model("product", ProductSchema);
+export default mongoose.model("products", ProductSchema);

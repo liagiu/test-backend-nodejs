@@ -1,12 +1,19 @@
 import express from "express";
 import cors from "cors";
-import routes from "./routes/index";
+import routes from "./routes/index.js";
+import db from "./database/config.js";
+import mongoose from "mongoose";
 
 class App {
   constructor() {
     this.server = express();
+    this.database();
     this.middlewares();
     this.routes();
+  }
+
+  database() {
+    mongoose.connect(db.uri, { useNewUrlParser: true });
   }
 
   middlewares() {
