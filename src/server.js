@@ -3,7 +3,7 @@ import Server from "./app.js";
 
 const server = http.Server(Server);
 server.listen(process.env.PORT || 3000, () =>
-  console.log(`Server ouvindo a porta -> 3333`)
+  console.log(`Server is listening..`)
 );
 
 Server.use((req, res, next) => {
