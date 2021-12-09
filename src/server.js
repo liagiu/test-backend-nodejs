@@ -7,7 +7,7 @@ server.listen(process.env.PORT || 3000, () =>
 );
 
 Server.use((req, res, next) => {
-  const erro = new Error("Recurso não encontrado");
+  const erro = new Error("Resource not found!");
   erro.status = 404;
   next(erro);
 });
@@ -15,8 +15,8 @@ Server.use((req, res, next) => {
 Server.use((error, req, res, next) => {
   res.status(error.status || 500);
   return res.send({
-    erro: {
-      mensagem: error.message,
+    error: {
+      message: error.message,
     },
   });
 });
